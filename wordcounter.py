@@ -6,19 +6,15 @@ Updated : 2019-06-23
 Language : python
 
 About : WordCounter
+
 Simple program making use of class definitions. 
 Counts the number of occurrences of a given word, 
 and its synonyms chosen from a thesaurus, in a corpus 
 of documents.
-
-This was a homework project for the coursera course
-"Computational Thinking for Problem Solving"
-(https://www.coursera.org/learn/computational-thinking-problem-solving)
 """
 
-
-# Defining Functions :
-#---------------------
+# Class Definitions :
+#--------------------
 
 # Word Class :
 class Word :
@@ -39,7 +35,7 @@ class Entry :
 # Input :
 # -------
 
-# Thesaurus:
+# Thesaurus :
 e1  = Entry('angry', ['mad', 'annoyed'])
 e2  = Entry('mad', ['angry', 'annoyed'])
 e3  = Entry('annoyed', ['angry', 'mad'])
@@ -65,20 +61,18 @@ syn_0 = 'angry'
 print('the keyword is :', syn_0)
 keyword = Word(syn_0)
 
-# Step 1 : Creating Synonym List from Thesaurus
+# Step 1 : creating synonym list from thesaurus
 # ---------------------------------------------
 SYN = []
 for entry in THE:
     if entry.word == keyword.word:
         for syn_i in entry.synonyms:
             if (syn_i != keyword.word):
-                #SYN.append(syn_i)
                 keyword.add_syn(syn_i)
-#print("list of synonyms is :", SYN)
 SYN = keyword.synonyms
 print("list of synonyms of keyword :", SYN)
 
-# Step 2 : Counting Occurence of Each word in Corpus
+# Step 2 : counting occurence of each word in corpus
 # --------------------------------------------------
 count_ls = []
 for syn_i in SYN:
@@ -87,8 +81,9 @@ for syn_i in SYN:
         for word in DOC:
             if word == syn_i:
                 count_syn = count_syn + 1
-    #print(syn_i, count_syn)
     count_ls.append((syn_i, count_syn))
 
 print("occurrence of each synonym :", count_ls)
 print("")
+
+# End
