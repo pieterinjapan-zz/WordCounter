@@ -3,9 +3,7 @@ Pieter van Wyk
 Created : 2018-12-30
 Updated : 2019-06-23
 
-Language : python
-
-About : WordCounter
+WordCounter :
 
 Simple program making use of class definitions. 
 Counts the number of occurrences of a given word, 
